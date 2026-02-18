@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Bold & Brave">
@@ -13,7 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>Bold & Brave</h1>
       <div class="divider" style="background: var(--color-warm-white);"></div>
       <p class="hero__sub">Artisan-woven fabrics from Brazil, designed with Italian elegance. Each piece tells a story.</p>
-      <a href="/collections" class="btn hero__btn">Shop the Collection</a>
+      <a href={`${base}/collections`} class="btn hero__btn">Shop the Collection</a>
     </div>
   </section>
 
@@ -48,28 +49,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="divider"></div>
     </div>
     <div class="container--wide collections-grid fade-in">
-      <a href="/collections" class="collection-card img-hover">
+      <a href={`${base}/collections`} class="collection-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/files/Juju_tartan_collection_vanessa_saroni_535831b3-8057-403e-8f79-3693254f8577_1400x.jpg?v=1614326105" alt="Tartan Collection" loading="lazy" />
         <div class="collection-card__info">
           <h3>Tartan</h3>
           <span class="uppercase">Explore</span>
         </div>
       </a>
-      <a href="/collections" class="collection-card img-hover">
+      <a href={`${base}/collections`} class="collection-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/files/Vanessa_Saroni_-_Linda_Piano_Collection_Off_White_1400x.jpg?v=1614326016" alt="Piano Collection" loading="lazy" />
         <div class="collection-card__info">
           <h3>Piano</h3>
           <span class="uppercase">Explore</span>
         </div>
       </a>
-      <a href="/collections" class="collection-card img-hover">
+      <a href={`${base}/collections`} class="collection-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/files/X3-01_e5f6b035-4844-4d3a-b7cd-c7e38e331c32_1400x.jpg?v=1661776410" alt="Colorcore Collection" loading="lazy" />
         <div class="collection-card__info">
           <h3>Colorcore</h3>
           <span class="uppercase">Explore</span>
         </div>
       </a>
-      <a href="/collections" class="collection-card img-hover">
+      <a href={`${base}/collections`} class="collection-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/files/X2-01_1400x.jpg?v=1661772900" alt="Lyric Collection" loading="lazy" />
         <div class="collection-card__info">
           <h3>Lyric</h3>
@@ -94,13 +95,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="content-block fade-in">
         <div class="content-block__image img-hover">
-          <img src="/images/our-women-1.jpg" alt="Vanessa Saroni artisan craftsmanship" loading="lazy" />
+          <img src={`${base}/images/our-women-1.jpg`} alt="Vanessa Saroni artisan craftsmanship" loading="lazy" />
         </div>
         <div class="content-block__text">
           <p class="uppercase">Our World</p>
           <h2>Made by Women, for Women</h2>
           <p>While the designs are an expression of Vanessa herself, it's the collaboration with other artists which is key to her approach — the connection and friendship is what really motivates her, and this mosaic of cultures is reflected in the brand.</p>
-          <a href="/our-world" class="btn">Discover Our Story</a>
+          <a href={`${base}/our-world`} class="btn">Discover Our Story</a>
         </div>
       </div>
     </div>
@@ -114,28 +115,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="divider"></div>
     </div>
     <div class="container products-grid fade-in">
-      <a href="/collections/tartan" class="product-card img-hover">
+      <a href={`${base}/collections/tartan`} class="product-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/files/Juju_tartan_collection_vanessa_saroni_535831b3-8057-403e-8f79-3693254f8577_1400x.jpg?v=1614326105" alt="JUJU bag" loading="lazy" />
         <div class="product-card__info">
           <h4>Juju</h4>
           <span>From &euro;675</span>
         </div>
       </a>
-      <a href="/collections/tartan" class="product-card img-hover">
+      <a href={`${base}/collections/tartan`} class="product-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/products/FW-91-890938_400x.jpg?v=1632528913" alt="LOLA bag" loading="lazy" />
         <div class="product-card__info">
           <h4>Lola</h4>
           <span>From &euro;595</span>
         </div>
       </a>
-      <a href="/collections/piano" class="product-card img-hover">
+      <a href={`${base}/collections/piano`} class="product-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/products/VanessaSaroni_20220719_E-Commerce_53-2_400x.jpg?v=1665649996" alt="DUDA bag" loading="lazy" />
         <div class="product-card__info">
           <h4>Duda</h4>
           <span>From &euro;645</span>
         </div>
       </a>
-      <a href="/collections/piano" class="product-card img-hover">
+      <a href={`${base}/collections/piano`} class="product-card img-hover">
         <img src="https://www.vanessasaroni.com/cdn/shop/products/FW-11-316104_400x.jpg?v=1632788509" alt="KAROL 3-in-1 bag" loading="lazy" />
         <div class="product-card__info">
           <h4>Karol</h4>
@@ -144,7 +145,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </a>
     </div>
     <div class="container text-center" style="margin-top: 3rem;">
-      <a href="/collections" class="btn">View All Bags</a>
+      <a href={`${base}/collections`} class="btn">View All Bags</a>
     </div>
   </section>
 
@@ -153,13 +154,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="content-block content-block--reverse fade-in">
         <div class="content-block__image img-hover">
-          <img src="/images/our-women-2.jpg" alt="Brazilian artisan weaving fabric" loading="lazy" />
+          <img src={`${base}/images/our-women-2.jpg`} alt="Brazilian artisan weaving fabric" loading="lazy" />
         </div>
         <div class="content-block__text">
           <p class="uppercase">Sustainability</p>
           <h2>Crafted with Conscience</h2>
           <p>We use only sustainable fabrics manufactured with minimal environmental impact. The manufacture of our fabrics is 100% handwoven, ethically sourced, reducing the need for excessive electricity and water use.</p>
-          <a href="/sustainability" class="btn">Our Commitment</a>
+          <a href={`${base}/sustainability`} class="btn">Our Commitment</a>
         </div>
       </div>
     </div>

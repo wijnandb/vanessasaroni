@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { title, description = "Luxury handcrafted bags made sustainably by women, for women. Artisan-woven fabrics from Brazil, designed in Italy." } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ const { title, description = "Luxury handcrafted bags made sustainably by women,
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <title>{title} | Vanessa Saroni</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
@@ -43,21 +44,21 @@ const { title, description = "Luxury handcrafted bags made sustainably by women,
         <span></span>
       </button>
 
-      <a href="/" class="nav__logo">
+      <a href={`${base}/`} class="nav__logo">
         <span class="nav__logo-text">Vanessa Saroni</span>
       </a>
 
       <nav class="nav__links" id="navLinks">
-        <a href="/">Home</a>
-        <a href="/collections">Collections</a>
-        <a href="/our-world">Our World</a>
-        <a href="/sustainability">Sustainability</a>
-        <a href="/mary-for-life">Mary for Life</a>
-        <a href="/collections">Shop</a>
+        <a href={`${base}/`}>Home</a>
+        <a href={`${base}/collections`}>Collections</a>
+        <a href={`${base}/our-world`}>Our World</a>
+        <a href={`${base}/sustainability`}>Sustainability</a>
+        <a href={`${base}/mary-for-life`}>Mary for Life</a>
+        <a href={`${base}/collections`}>Shop</a>
       </nav>
 
       <div class="nav__actions">
-        <a href="/collections" class="nav__shop-link">Shop Now</a>
+        <a href={`${base}/collections`} class="nav__shop-link">Shop Now</a>
       </div>
     </div>
   </header>
@@ -91,18 +92,18 @@ const { title, description = "Luxury handcrafted bags made sustainably by women,
 
         <div class="footer__links">
           <h4>Explore</h4>
-          <a href="/collections">Collections</a>
-          <a href="/our-world">Our World</a>
-          <a href="/sustainability">Sustainability</a>
-          <a href="/mary-for-life">Mary for Life</a>
+          <a href={`${base}/collections`}>Collections</a>
+          <a href={`${base}/our-world`}>Our World</a>
+          <a href={`${base}/sustainability`}>Sustainability</a>
+          <a href={`${base}/mary-for-life`}>Mary for Life</a>
         </div>
 
         <div class="footer__links">
           <h4>Shop</h4>
-          <a href="/collections">All Bags</a>
-          <a href="/collections">Best Sellers</a>
-          <a href="/sustainability">Shipping</a>
-          <a href="/our-world">About Us</a>
+          <a href={`${base}/collections`}>All Bags</a>
+          <a href={`${base}/collections`}>Best Sellers</a>
+          <a href={`${base}/sustainability`}>Shipping</a>
+          <a href={`${base}/our-world`}>About Us</a>
         </div>
 
         <div class="footer__newsletter">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { collections } from '../../data/collections';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const bagStyles = [
   { name: "Shoulder Bags", slug: "shoulder-bags" },
@@ -27,7 +28,7 @@ const bagStyles = [
   <section class="section">
     <div class="container--wide collection-grid">
       {collections.map((col) => (
-        <a href={`/collections/${col.slug}`} class="collection-item img-hover fade-in">
+        <a href={`${base}/collections/${col.slug}`} class="collection-item img-hover fade-in">
           <div class="collection-item__image">
             <img src={col.image} alt={`${col.name} Collection`} loading="lazy" />
           </div>
@@ -49,7 +50,7 @@ const bagStyles = [
       <div class="divider"></div>
       <div class="style-grid fade-in">
         {bagStyles.map((style) => (
-          <a href="/collections" class="style-chip">
+          <a href={`${base}/collections`} class="style-chip">
             {style.name}
           </a>
         ))}

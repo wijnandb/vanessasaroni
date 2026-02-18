@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Mary for Life" description="Vanessa Saroni supports Mary for Life — an international volunteer organization supporting women and families.">
@@ -18,7 +19,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="content-block fade-in">
         <div class="content-block__image img-hover">
-          <img src="/images/our-women-1.jpg" alt="Supporting women through Vanessa Saroni" loading="lazy" />
+          <img src={`${base}/images/our-women-1.jpg`} alt="Supporting women through Vanessa Saroni" loading="lazy" />
         </div>
         <div class="content-block__text">
           <p class="uppercase">The Initiative</p>
@@ -38,7 +39,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2>The Pouch Mary Collection</h2>
         <div class="divider"></div>
         <p class="connection__text">Revenue from the Pouch Mary collection — a beautifully patterned phone and wrist bag — directly funds Mary for Life's charitable work. Every purchase makes a difference in the lives of women and families who need support most.</p>
-        <a href="/collections" class="btn" style="margin-top: 2rem;">Shop the Pouch Mary</a>
+        <a href={`${base}/collections`} class="btn" style="margin-top: 2rem;">Shop the Pouch Mary</a>
       </div>
     </div>
   </section>

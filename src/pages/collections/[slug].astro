@@ -11,6 +11,7 @@ export function getStaticPaths() {
 const { slug } = Astro.params;
 const collection = getCollection(slug!)!;
 const collectionProducts = getProductsByCollection(slug!);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title={collection.name} description={collection.longDescription}>
@@ -68,7 +69,7 @@ const collectionProducts = getProductsByCollection(slug!);
         <h2>New pieces arriving</h2>
         <div class="divider"></div>
         <p style="margin: 0 auto;">We're preparing new additions to the {collection.name} collection. Check back soon or explore our other collections.</p>
-        <a href="/collections" class="btn" style="margin-top: 2rem;">View All Collections</a>
+        <a href={`${base}/collections`} class="btn" style="margin-top: 2rem;">View All Collections</a>
       </div>
     </section>
   )}
@@ -92,7 +93,7 @@ const collectionProducts = getProductsByCollection(slug!);
     </div>
     <div class="container other-collections fade-in">
       {collections.filter((c) => c.slug !== slug).slice(0, 3).map((col) => (
-        <a href={`/collections/${col.slug}`} class="other-card img-hover">
+        <a href={`${base}/collections/${col.slug}`} class="other-card img-hover">
           <div class="other-card__image">
             <img src={col.image} alt={`${col.name} Collection`} loading="lazy" />
           </div>
