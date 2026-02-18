@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sustainability" description="Vanessa Saroni's commitment to sustainable fashion — handwoven fabrics, ethical sourcing, and minimal environmental impact.">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="uppercase">Our Commitment</p>
+      <h1>Sustainability</h1>
+      <div class="divider"></div>
+      <p>Fashion that respects the earth and empowers the people who create it.</p>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="section">
+    <div class="container text-center">
+      <div class="vision fade-in">
+        <p class="uppercase">Our Vision</p>
+        <h2>Luxury Without Compromise</h2>
+        <div class="divider"></div>
+        <p class="vision__text">We believe that true luxury lies not just in the beauty of a product, but in the integrity of its creation. Every Vanessa Saroni bag is a testament to what happens when craftsmanship, sustainability, and purpose come together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="section" style="background: var(--color-cream);">
+    <div class="container">
+      <div class="pillars fade-in">
+        <div class="pillar">
+          <span class="pillar__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <h3>Ethically Sourced</h3>
+          <p>We use only sustainable fabrics manufactured with minimal environmental impact. Our supply chain prioritizes fair wages, safe conditions, and community investment.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </span>
+          <h3>100% Handwoven</h3>
+          <p>The manufacture of our fabrics is 100% handwoven, ethically sourced, reducing the need for excessive electricity and water use. Each metre takes a full day to produce.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3>Female Empowerment</h3>
+          <p>Our fabrics are produced by talented Brazilian artisans who, with their skills and knowledge of manual weaving techniques, generate income and livelihoods for their communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block fade-in">
+        <div class="content-block__image img-hover">
+          <img src="/images/our-women-2.jpg" alt="Artisan hand-weaving fabric in Brazil" loading="lazy" />
+        </div>
+        <div class="content-block__text">
+          <p class="uppercase">Our Mission</p>
+          <h2>Conscious Design, Beautiful Results</h2>
+          <p>We combine sophistication, eco-friendliness, traditional craftsmanship and innovative techniques. Our handcrafted approach reduces reliance on industrial energy consumption and water resources compared to conventional manufacturing.</p>
+          <p>Drawing from dual roots in Brazil and Italy, we blend both traditions to create distinctive pieces that carry timeless elegance and style — proving that sustainability and luxury are not opposites, but natural partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section stats-section" style="background: var(--color-black); color: var(--color-sand);">
+    <div class="container">
+      <div class="stats fade-in">
+        <div class="stat">
+          <span class="stat__number">100%</span>
+          <span class="stat__label">Handwoven Fabrics</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">1 Day</span>
+          <span class="stat__label">Per Metre of Fabric</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">0</span>
+          <span class="stat__label">Industrial Machinery Used</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote">
+    <div class="container">
+      <blockquote class="fade-in">
+        "I wish each piece tells a story and stirs emotion."
+      </blockquote>
+      <cite>Vanessa Saroni</cite>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .vision__text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .pillar {
+    padding: 2rem 1.5rem;
+  }
+
+  .pillar__icon {
+    display: inline-block;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .pillar p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.8;
+    margin: 0 auto;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .stat__number {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat__label {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .pillars {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .stats {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

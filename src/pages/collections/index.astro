@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { collections } from '../../data/collections';
+
+const bagStyles = [
+  { name: "Shoulder Bags", slug: "shoulder-bags" },
+  { name: "Crossbody Bags", slug: "crossbody-bags" },
+  { name: "Bucket Bags", slug: "bucket-bags" },
+  { name: "Top Handle Bags", slug: "top-handle-bags" },
+  { name: "Belt Bags & Clutches", slug: "belt-bags-clutches" },
+  { name: "Shopper Bags", slug: "shopper-bags" },
+  { name: "Pouch Bags", slug: "pouch-bags" },
+];
+---
+
+<BaseLayout title="Collections" description="Explore Vanessa Saroni's luxury handcrafted bag collections — Tartan, Piano, Colorcore, Lyric, and more.">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="uppercase">Explore</p>
+      <h1>Collections</h1>
+      <div class="divider"></div>
+      <p>Each collection is a chapter in our story — woven with intention, dyed with emotion, shaped with purpose.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container--wide collection-grid">
+      {collections.map((col) => (
+        <a href={`/collections/${col.slug}`} class="collection-item img-hover fade-in">
+          <div class="collection-item__image">
+            <img src={col.image} alt={`${col.name} Collection`} loading="lazy" />
+          </div>
+          <div class="collection-item__info">
+            <h2>{col.name}</h2>
+            <p>{col.description}</p>
+            <span class="uppercase">Shop Collection</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Shop by Style -->
+  <section class="section" style="background: var(--color-cream);">
+    <div class="container text-center">
+      <p class="uppercase">Find Your Style</p>
+      <h2>Shop by Bag Type</h2>
+      <div class="divider"></div>
+      <div class="style-grid fade-in">
+        {bagStyles.map((style) => (
+          <a href="/collections" class="style-chip">
+            {style.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="container">
+      <blockquote class="fade-in">
+        "The connection and friendship with other artists is what really motivates me, and this mosaic of cultures is reflected in the brand."
+      </blockquote>
+      <cite>Vanessa Saroni</cite>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .collection-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
+    max-width: var(--container-wide);
+    margin: 0 auto;
+  }
+
+  .collection-item {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-cream);
+    text-decoration: none;
+    transition: transform 0.4s ease;
+    width: calc((100% - 3rem) / 3);
+  }
+
+  .collection-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .collection-item__image {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+
+  .collection-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .collection-item:hover .collection-item__image img {
+    transform: scale(1.05);
+  }
+
+  .collection-item__info {
+    padding: 1.5rem 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .collection-item__info h2 {
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    margin-bottom: 0.4rem;
+  }
+
+  .collection-item__info p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+
+  .collection-item__info .uppercase {
+    color: var(--color-gold);
+    transition: color 0.3s ease;
+  }
+
+  .collection-item:hover .collection-item__info .uppercase {
+    color: var(--color-terracotta);
+  }
+
+  .style-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .style-chip {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--color-charcoal);
+    color: var(--color-charcoal);
+    transition: all 0.3s ease;
+  }
+
+  .style-chip:hover {
+    background: var(--color-black);
+    color: var(--color-warm-white);
+    border-color: var(--color-black);
+  }
+
+  @media (max-width: 900px) {
+    .collection-item {
+      width: calc((100% - 1.5rem) / 2);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .collection-item {
+      width: 100%;
+    }
+
+    .collection-item__image {
+      aspect-ratio: 4/3;
+    }
+  }
+</style>

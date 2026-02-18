@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Our World" description="Discover the world of Vanessa Saroni — our women, our fabrics, our process. Handcrafted luxury made by women, for women.">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="uppercase">Discover</p>
+      <h1>Our World</h1>
+      <div class="divider"></div>
+      <p>A world where artisanship meets purpose, where every thread carries meaning, and every bag empowers the hands that made it.</p>
+    </div>
+  </section>
+
+  <!-- Our Women -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block fade-in">
+        <div class="content-block__image img-hover">
+          <img src="/images/our-women-1.jpg" alt="Vanessa Saroni and her team of women artisans" loading="lazy" />
+        </div>
+        <div class="content-block__text">
+          <p class="uppercase">Our Women</p>
+          <h2>Made by Women, for Women</h2>
+          <p>Vanessa has always been a supporter for female empowerment and she launched this project with the purpose of making a difference in women's lives by advancing and strengthening female entrepreneurship.</p>
+          <p>Our motto is "made by women for women" because we truly believe in the importance of boosting and nurturing women's talents, thus creating new job opportunities, but also increasing women's confidence and strength throughout whole communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Fabrics -->
+  <section class="section" style="background: var(--color-cream);">
+    <div class="container">
+      <div class="content-block content-block--reverse fade-in">
+        <div class="content-block__image img-hover">
+          <img src="/images/our-women-2.jpg" alt="Hand weaving artisan fabrics" loading="lazy" />
+        </div>
+        <div class="content-block__text">
+          <p class="uppercase">Our Fabrics</p>
+          <h2>Woven with Heart</h2>
+          <p>Each metre of our exquisite fabric takes a day for our artisans to produce. Through the interlacing of individual threads, talented hands and minds of weavers transform single threads into beautiful art pieces.</p>
+          <p>Our bespoke fabrics are composed of 100% cotton, silk and wool that are exclusively produced for Vanessa Saroni. Each thread, color, and weave is custom-designed, making the fabrics truly unique to our collections.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block fade-in">
+        <div class="content-block__text" style="grid-column: 1 / -1; text-align: center; max-width: 800px; margin: 0 auto;">
+          <p class="uppercase">Our Process</p>
+          <h2>Where Tradition Meets Innovation</h2>
+          <div class="divider"></div>
+          <p style="margin: 0 auto;">We combine sophistication, eco-friendliness, traditional craftsmanship and innovative techniques. Drawing from dual roots in Brazil and Italy, Vanessa blends both traditions to create distinctive pieces that carry timeless elegance and style.</p>
+        </div>
+      </div>
+
+      <div class="process-grid fade-in">
+        <div class="process-step">
+          <span class="process-step__number">01</span>
+          <h3>Design</h3>
+          <p>Each collection begins with Vanessa's vision, inspired by her Brazilian-Italian heritage and collaborations with artists worldwide.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__number">02</span>
+          <h3>Weave</h3>
+          <p>Our artisans in Brazil hand-weave every metre of fabric using traditional techniques passed down through generations.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__number">03</span>
+          <h3>Craft</h3>
+          <p>Skilled hands transform the woven fabrics into luxurious bags, with Italian precision and attention to every detail.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__number">04</span>
+          <h3>Deliver</h3>
+          <p>Each bag is carefully packaged and shipped worldwide — a piece of art ready to become part of your story.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Quote -->
+  <section class="quote">
+    <div class="container">
+      <blockquote class="fade-in">
+        "While the designs are an expression of herself, it's the collaboration with other artists which is key to Vanessa's approach — the connection and friendship is what really motivates her."
+      </blockquote>
+      <cite>Vanessa Saroni</cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="container">
+      <h2>Discover the Collection</h2>
+      <div class="divider"></div>
+      <p style="margin: 0 auto 2rem;">Each bag is a testament to craftsmanship, culture, and the power of women working together.</p>
+      <a href="/collections" class="btn">View Collections</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .process-step {
+    padding: 2rem 1rem;
+  }
+
+  .process-step__number {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .process-step p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .process-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mary for Life" description="Vanessa Saroni supports Mary for Life — an international volunteer organization supporting women and families.">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="uppercase">Giving Back</p>
+      <h1>Mary for Life</h1>
+      <div class="divider"></div>
+      <p>Fashion with a purpose — supporting women and families through every bag we create.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block fade-in">
+        <div class="content-block__image img-hover">
+          <img src="/images/our-women-1.jpg" alt="Supporting women through Vanessa Saroni" loading="lazy" />
+        </div>
+        <div class="content-block__text">
+          <p class="uppercase">The Initiative</p>
+          <h2>Purpose Beyond Fashion</h2>
+          <p>Mary for Life is an international volunteer organization founded in 2015, dedicated to providing assistance to women facing pregnancy difficulties and their families.</p>
+          <p>The organization assists expectant mothers and parents through grief counseling, spiritual support, cultural and psychological pathways, and youth programs in education, sports, and arts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connection -->
+  <section class="section" style="background: var(--color-cream);">
+    <div class="container text-center">
+      <div class="connection fade-in">
+        <p class="uppercase">How We Contribute</p>
+        <h2>The Pouch Mary Collection</h2>
+        <div class="divider"></div>
+        <p class="connection__text">Revenue from the Pouch Mary collection — a beautifully patterned phone and wrist bag — directly funds Mary for Life's charitable work. Every purchase makes a difference in the lives of women and families who need support most.</p>
+        <a href="/collections" class="btn" style="margin-top: 2rem;">Shop the Pouch Mary</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="uppercase">What They Do</p>
+      <h2>Services & Support</h2>
+      <div class="divider"></div>
+
+      <div class="services-grid fade-in">
+        <div class="service">
+          <h3>Counseling & Support</h3>
+          <p>Grief counseling and psychological pathways for expectant mothers and parents experiencing loss.</p>
+        </div>
+        <div class="service">
+          <h3>Youth Programs</h3>
+          <p>Programs in education, sports, and arts helping young people build confidence and skills.</p>
+        </div>
+        <div class="service">
+          <h3>Community Building</h3>
+          <p>Creating supportive networks for women in vulnerable moments, with branches in Italy and Bosnia-Herzegovina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote">
+    <div class="container">
+      <blockquote class="fade-in">
+        "I wish each piece tells a story and stirs emotion."
+      </blockquote>
+      <cite>Vanessa Saroni</cite>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .connection__text {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .service {
+    padding: 2rem 1.5rem;
+  }
+
+  .service h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .service p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.8;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

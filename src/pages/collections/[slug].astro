@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { collections, products, getCollection, getProductsByCollection } from '../../data/collections';
+
+export function getStaticPaths() {
+  return collections.map((col) => ({
+    params: { slug: col.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const collection = getCollection(slug!)!;
+const collectionProducts = getProductsByCollection(slug!);
+---
+
+<BaseLayout title={collection.name} description={collection.longDescription}>
+
+  <!-- Collection Hero -->
+  <section class="collection-hero">
+    <img src={collection.image} alt={`${collection.name} Collection`} class="collection-hero__image" />
+    <div class="collection-hero__overlay"></div>
+    <div class="collection-hero__content">
+      <p class="uppercase">Collection</p>
+      <h1>{collection.name}</h1>
+      <div class="divider" style="background: var(--color-warm-white);"></div>
+      <p class="collection-hero__desc">{collection.description}</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="collection-about fade-in">{collection.longDescription}</p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  {collectionProducts.length > 0 && (
+    <section class="section" style="background: var(--color-cream);">
+      <div class="container">
+        <div class="text-center">
+          <p class="uppercase">Shop</p>
+          <h2>The {collection.name} Collection</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="products-grid fade-in">
+          {collectionProducts.map((product) => (
+            <div class="product-card img-hover">
+              <div class="product-card__image">
+                <img src={product.image} alt={product.name} loading="lazy" />
+              </div>
+              <div class="product-card__info">
+                <h3>{product.name}</h3>
+                <span>{product.price}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Collections without products yet -->
+  {collectionProducts.length === 0 && (
+    <section class="section" style="background: var(--color-cream);">
+      <div class="container text-center">
+        <p class="uppercase">Coming Soon</p>
+        <h2>New pieces arriving</h2>
+        <div class="divider"></div>
+        <p style="margin: 0 auto;">We're preparing new additions to the {collection.name} collection. Check back soon or explore our other collections.</p>
+        <a href="/collections" class="btn" style="margin-top: 2rem;">View All Collections</a>
+      </div>
+    </section>
+  )}
+
+  <!-- Quote -->
+  <section class="quote">
+    <div class="container">
+      <blockquote class="fade-in">
+        "I wish each piece tells a story and stirs emotion."
+      </blockquote>
+      <cite>Vanessa Saroni</cite>
+    </div>
+  </section>
+
+  <!-- Other Collections -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="uppercase">Explore More</p>
+      <h2>Other Collections</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="container other-collections fade-in">
+      {collections.filter((c) => c.slug !== slug).slice(0, 3).map((col) => (
+        <a href={`/collections/${col.slug}`} class="other-card img-hover">
+          <div class="other-card__image">
+            <img src={col.image} alt={`${col.name} Collection`} loading="lazy" />
+          </div>
+          <h3>{col.name}</h3>
+        </a>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .collection-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .collection-hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .collection-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.2) 0%,
+      rgba(26, 26, 26, 0.5) 100%
+    );
+  }
+
+  .collection-hero__content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+  }
+
+  .collection-hero__content .uppercase {
+    color: var(--color-gold);
+  }
+
+  .collection-hero__content h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-style: italic;
+    color: var(--color-warm-white);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .collection-hero__desc {
+    color: var(--color-warm-white);
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 1rem auto 0;
+  }
+
+  .collection-about {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .product-card__image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--color-warm-white);
+  }
+
+  .product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .product-card:hover .product-card__image img {
+    transform: scale(1.05);
+  }
+
+  .product-card__info {
+    text-align: center;
+    padding: 1.2rem 0.5rem;
+  }
+
+  .product-card__info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .product-card__info span {
+    font-size: 0.9rem;
+    color: var(--color-gold);
+  }
+
+  .other-collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .other-card {
+    text-align: center;
+    display: block;
+  }
+
+  .other-card__image {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .other-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .other-card:hover .other-card__image img {
+    transform: scale(1.05);
+  }
+
+  .other-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .other-collections {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .other-collections {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
